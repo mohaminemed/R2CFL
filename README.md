@@ -40,9 +40,9 @@ This repository contains the complete implementation of **R2-CFL** together with
 
 The framework supports the reproduction of experiments under three advanced adaptive attacks:
 
-* **Optimized Model Poisoning (OMP)**
-* **A3FL**
-* **Neurotoxin**
+* **OMP (NDSS'21)**
+* **A3FL (NeurIPS'23)**
+* **Neurotoxin (ICML'22)**
 
 These attacks are implemented following their original specifications and can be combined with the available defense mechanisms and reputation models.
 
