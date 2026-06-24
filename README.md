@@ -10,7 +10,7 @@ To address this challenge, we propose **R2CFL**, a **Robust Reputation-Driven Cr
 
 * A **robust reputation model** that continuously evaluates participant reliability.
 * **R2-NNM (Robust Reputation-Aware Nearest Neighbor Mixing)**, a defense mechanism that couples reputation evolution with update filtering during aggregation.
-* A reputation-aware aggregation strategy that prevents stealthy attackers from accumulating trust over time.
+
 
 Experimental results demonstrate that R2-NNM matches or outperforms state-of-the-art Byzantine and backdoor defenses under adaptive attackers. Furthermore, when combined with existing detect-and-filter defenses, the proposed reputation model accurately reflects their statistical performance by preserving true positive and false positive rates.
 
@@ -54,7 +54,6 @@ These attacks are implemented following their original specifications and can be
 Clone the repository:
 
 ```bash
-git clone https://github.com/<username>/R2CFL.git
 cd R2CFL
 ```
 
