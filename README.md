@@ -98,12 +98,12 @@ src/experiment/configs/<defense>/<attack>_analysis_<dataset>.yml
 
 The following configuration launches experiments using:
 
-* Defense: `rep_nnm`
+* Defense: `r2_nnm`
 * Dataset: `gtsrb`
 * Attack: `a3fl`
 
 ```bash
-python main.py --config ./src/experiment/configs/rep_nnm/a3fl_analysis_gtsrb.yml
+python main.py --config ./src/experiment/configs/r2_nnm/a3fl_analysis_gtsrb.yml
 ```
 
 ### Available Defenses
@@ -141,7 +141,7 @@ neurotoxin
 To evaluate additional combinations, edit the arrays in `run_experiment.sh`:
 
 ```bash
-defenses=("rep_nnm" "flame" "deepsight")
+defenses=("r2_nnm" "flame" "deepsight")
 datasets=("gtsrb" "cifar")
 attacks=("omp" "a3fl" "neurotoxin")
 ```
