@@ -9,7 +9,7 @@ from ..attacks.triggers.a3fl import A3FLTrigger
 
 class A3FLClient(BenignClient):
     """
-    Implements the Adversarial Adaptive Anchor (A3FL) backdoor attack.
+    Implements the Adversarial Adaptive FL backdoor Attack (A3FL).
 
     This client performs a two-stage attack in each round:
     1. It first optimizes a trigger pattern to be robust against a hardened
