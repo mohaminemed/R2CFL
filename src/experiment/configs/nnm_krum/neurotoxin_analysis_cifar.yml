@@ -1,0 +1,50 @@
+experiment_name: 'neurotoxin_nnm_cifar_iid'
+seed: 42
+device: "cuda"
+output_dir: "results"
+
+data_params:
+  dataset_name: 'cifar10'
+  root: 'data'
+  download: true
+  strategy: 'iid' #'dirichlet'
+  alpha: 0.5
+fl_params:
+  num_clients: 20
+  clients_per_round: 20 
+  num_rounds: 200
+
+training_params:
+  batch_size: 32
+  local_epochs: 1
+  optimizer: 'sgd'
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.00
+  fedprox_mu: 0.01 # Use FedProx for benign clients to stabilize updates
+
+attack_params:
+  enabled: true
+  name: 'neurotoxin' # Specify the Neurotoxin attack
+  malicious_client_ids: [0, 1, 2, 3, 4, 5] # Example: Clients 0 and 1 are attackers
+  target_label: 8
+  attack_start_round: 120 # Start attack after some initial convergence
+  attack_end_round: 170
+  poison_fraction: 0.25 # Fraction of local data attacker poisons
+  mask_k_percent: 0.05 # Neurotoxin: Mask top 5% important params (adjust as needed)
+
+  # Trigger used by Neurotoxin for poisoning
+  trigger:
+    name: 'patch'
+    position: [28, 28] # Bottom-right for 32x32 GTSRB
+    size: [3, 3]
+    color: [1.0, 1.0, 1.0] # White patch
+
+defense_params:
+  enabled: true # Enable the analysis server
+  name: 'nnm_krum'
+  # --- NNM specific parameters ---
+  base_defense: 'krum' # Use Krum as the base defense
+  nnm_k: 12
+  krum_f: 5
+  krum_m: 14

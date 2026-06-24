@@ -1,0 +1,42 @@
+experiment_name: 'omp_deepsight_fashion_noniid'
+seed: 42
+device: "cuda"
+output_dir: "results"
+
+data_params:
+  dataset_name: 'fashionmnist'
+  root: 'data'
+  download: true
+  strategy: 'dirichlet'   #'iid' #
+  alpha: 0.5
+  
+fl_params:
+  num_clients: 200
+  clients_per_round: 200 
+  num_rounds: 10
+
+training_params:
+  batch_size: 32
+  local_epochs: 1
+  optimizer: 'sgd'
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.00
+
+attack_params:
+  enabled: true
+  name: "omp"
+  malicious_client_ids: [0, 1, 2, 3, 4, 5] 
+  attack_start_round: 1 
+  attack_end_round: 100
+
+
+
+defense_params:
+  enabled: true # Enable the analysis server
+  name: 'deepsight'
+  # --- deepsight specific parameters ---
+  deepsight_num_samples: 256
+  deepsight_num_seeds: 3
+  deepsight_batch_size: 64
+  deepsight_tau: 0.5

@@ -1,0 +1,9 @@
+giotto_tda
+hdbscan
+numpy
+persim
+PyYAML
+scikit_learn
+scipy
+torch
+torchvision

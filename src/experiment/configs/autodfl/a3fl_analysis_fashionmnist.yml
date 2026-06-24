@@ -1,0 +1,54 @@
+experiment_name: 'a3fl_autodfl_fashion_iid'
+seed: 42
+device: "cuda"
+output_dir: "results"
+
+data_params:
+  dataset_name: 'fashionmnist'
+  root: 'data'
+  download: true
+  strategy: 'iid' #'dirichlet'  #
+  alpha: 0.5
+  
+fl_params:
+  num_clients: 20
+  clients_per_round: 20 
+  num_rounds: 100
+
+training_params:
+  batch_size: 32
+  local_epochs: 1
+  optimizer: 'sgd'
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.00
+
+attack_params:
+  enabled: true
+  name: 'a3fl' 
+  malicious_client_ids: [0, 1, 2, 3, 4, 5] # Example: Clients 0 and 1 are attackers
+ 
+  poison_fraction: 0.25 
+  target_label: 7 
+  attack_start_round: 60
+  attack_end_round: 80
+  malicious_epochs: 5 
+  trigger:
+    name: 'a3fl'
+    kwargs:
+      in_channels: 1        
+      image_size: [28, 28]   
+      position: [24, 24]     
+      size: [3, 3]
+      # Hyperparameters for the trigger optimization process
+      trigger_lr: 0.01
+      lambda_balance: 0.1
+      adv_epochs: 100
+      adv_lr: 0.01
+
+
+defense_params:
+  enabled: true # Enable the analysis server
+  name: 'autodfl'
+  # --- specific parameters ---
+  keep_ratio: 0.7
