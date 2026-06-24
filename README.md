@@ -170,7 +170,6 @@ The experiments include:
 * Clean training performance.
 * Byzantine robustness evaluation.
 * Backdoor attack evaluation.
-* Adaptive attacker evaluation.
 * Reputation convergence analysis.
 * Defense detection performance (TPR/FPR analysis).
 
