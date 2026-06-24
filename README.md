@@ -115,7 +115,6 @@ flame
 deepsight
 autodfl
 ssmtd
-ssmtd_hmm
 ```
 
 ### Available Datasets
