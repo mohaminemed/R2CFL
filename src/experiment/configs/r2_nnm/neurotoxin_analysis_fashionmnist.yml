@@ -1,17 +1,15 @@
-experiment_name: 'neurotoxin_rep_nnm_gtsrb_noniid'
+experiment_name: 'neurotoxin_r2_nnm_fashion_iid'
 seed: 42
 device: "cuda"
 output_dir: "results"
 
 data_params:
-  dataset_name: 'gtsrb'
+  dataset_name: 'fashionmnist'
   root: 'data'
   download: true
-  strategy: 'dirichlet' #'iid' #
+  strategy: 'iid' # 'dirichlet' 
   alpha: 0.5
-  load_pretrained: false
-  load_model_path: "./src/pretrained/gtsrb.pth"
-
+  
 fl_params:
   num_clients: 20
   clients_per_round: 20 
@@ -38,16 +36,16 @@ attack_params:
   # Trigger used by Neurotoxin for poisoning
   trigger:
     name: 'patch'
-    position: [28, 28] # Bottom-right for 32x32 GTSRB
+    in_channels: 1
+    image_size: [28, 28]
     size: [3, 3]
     color: [1.0, 1.0, 1.0] # White patch
 
-    
 defense_params:
   enabled: true # Enable the analysis server
-  name: 'rep_nnm'
+  name: 'r2_nnm'
   # --- NNM specific parameters ---
   base_defense: 'krum' # Use Krum as the base defense 
   krum_f: 5
   krum_m: 14
-  nnm_k: 10
+  nnm_k: 12

@@ -1,0 +1,182 @@
+# R2CFL: Robust Reputation-Driven Crowdsourced Federated Learning
+
+## Overview
+
+**Crowdsourced Federated Learning (CrowdFL)** extends traditional Federated Learning (FL) by enabling open and heterogeneous participation through a crowdsourcing paradigm. In such environments, reputation-based incentive mechanisms are commonly used to guide worker selection and improve trustworthiness.
+
+While existing reputation-driven CrowdFL frameworks improve participant reliability, they largely overlook the robustness of reputation systems against stealthy adversaries capable of evading standard detection mechanisms. As a result, malicious participants may gradually accumulate reputation and gain increasing influence over future training tasks.
+
+To address this challenge, we propose **R2CFL**, a **Robust Reputation-Driven Crowdsourced Federated Learning** framework. R2CFL introduces:
+
+* A **robust reputation model** that continuously evaluates participant reliability.
+* **R2-NNM (Robust Reputation-Aware Nearest Neighbor Mixing)**, a defense mechanism that couples reputation evolution with update filtering during aggregation.
+* A reputation-aware aggregation strategy that prevents stealthy attackers from accumulating trust over time.
+
+Experimental results demonstrate that R2-NNM matches or outperforms state-of-the-art Byzantine and backdoor defenses under adaptive attackers. Furthermore, when combined with existing detect-and-filter defenses, the proposed reputation model accurately reflects their statistical performance by preserving true positive and false positive rates.
+
+---
+
+## Repository Contents
+
+This repository contains the complete implementation of **R2-CFL** together with several state-of-the-art defense and reputation mechanisms used as baselines.
+
+### Defense Mechanisms
+
+* **NNM** (Nearest Neighbor Mixing)
+* **M-Krum**
+* **FLAME**
+* **DeepSight**
+* **R2-NNM** (proposed)
+
+### Reputation Frameworks
+
+* **AutoDFL**
+* **SSMTD**
+* **R2CFL Reputation Model** (proposed)
+
+---
+
+## Supported Attacks
+
+The framework supports the reproduction of experiments under three advanced adaptive attacks:
+
+* **Optimized Model Poisoning (OMP)**
+* **A3FL**
+* **Neurotoxin**
+
+These attacks are implemented following their original specifications and can be combined with the available defense mechanisms and reputation models.
+
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/<username>/R2CFL.git
+cd R2CFL
+```
+
+Create and activate a virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Running Experiments
+
+Experiments are executed using the provided shell script:
+
+```bash
+chmod +x run_experiment.sh
+./run_experiment.sh
+```
+
+The script automatically iterates over combinations of:
+
+* Defense mechanisms
+* Datasets
+* Attack scenarios
+
+The corresponding configuration file is loaded from:
+
+```text
+src/experiment/configs/<defense>/<attack>_analysis_<dataset>.yml
+```
+
+### Example Configuration
+
+The following configuration launches experiments using:
+
+* Defense: `rep_nnm`
+* Dataset: `gtsrb`
+* Attack: `a3fl`
+
+```bash
+python main.py --config ./src/experiment/configs/rep_nnm/a3fl_analysis_gtsrb.yml
+```
+
+### Available Defenses
+
+```text
+r2_nnm      # Proposed R2CFL defense
+nnm
+nnm_krum
+flame
+deepsight
+autodfl
+ssmtd
+ssmtd_hmm
+```
+
+### Available Datasets
+
+```text
+gtsrb
+femnist
+cifar
+fashionmnist
+```
+
+### Available Attacks
+
+```text
+omp
+a3fl
+neurotoxin
+```
+
+### Modifying Experiments
+
+To evaluate additional combinations, edit the arrays in `run_experiment.sh`:
+
+```bash
+defenses=("rep_nnm" "flame" "deepsight")
+datasets=("gtsrb" "cifar")
+attacks=("omp" "a3fl" "neurotoxin")
+```
+
+The script will automatically execute all possible combinations and launch the corresponding configuration files.
+
+
+Configuration files located in the `configs/` directory allow users to customize:
+
+* Dataset
+* Number of participants
+* Attack type and parameters
+* Defense mechanism and parameters
+* Training hyperparameters
+
+
+
+---
+
+## Reproducing Paper Results
+
+The repository provides scripts and configuration files to reproduce all experimental results presented in the paper.
+
+The experiments include:
+
+* Clean training performance.
+* Byzantine robustness evaluation.
+* Backdoor attack evaluation.
+* Adaptive attacker evaluation.
+* Reputation convergence analysis.
+* Defense detection performance (TPR/FPR analysis).
+
+
+---
+
+## License
+
+This project is released under the MIT License. See the `LICENSE` file for details.

@@ -1,22 +1,23 @@
-experiment_name: 'a3fl_rep_nnm_cifar_iid'
+experiment_name: 'a3fl_r2_nnm_gtsrb_noniid'
 seed: 42
 device: "cuda"
 output_dir: "results"
 
 data_params:
-  dataset_name: 'cifar10'
+  dataset_name: 'gtsrb'
   root: 'data'
   download: true
-  strategy: 'iid' #'dirichlet' #
+  strategy: 'dirichlet'  #'iid' #
   alpha: 0.5
   load_pretrained: false
-  load_model_path: "./src/pretrained/cifar10_noniid.pth"
+  load_model_path: "./src/pretrained/gtsrb.pth"
   
 
+
 fl_params:
-  num_clients: 20
-  clients_per_round: 20 
-  num_rounds: 200
+  num_clients: 50
+  clients_per_round: 50 
+  num_rounds: 100
 
 training_params:
   batch_size: 32
@@ -29,12 +30,12 @@ training_params:
 attack_params:
   enabled: true
   name: "a3fl"
-  malicious_client_ids: [0, 1, 2, 3, 4, 5] 
+  malicious_client_ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] 
   
   poison_fraction: 0.25 
   target_label: 7 
-  attack_start_round: 120
-  attack_end_round: 170
+  attack_start_round: 60
+  attack_end_round: 80
   malicious_epochs: 5 
   trigger:
     name: 'a3fl'
@@ -52,9 +53,10 @@ attack_params:
 
 defense_params:
   enabled: true # Enable the analysis server
-  name: 'rep_nnm'
+  name: 'r2_nnm'
   # --- NNM specific parameters ---
+  bucket_size: 2
   base_defense: 'krum' 
-  nnm_k: 13
+  nnm_k: 10
   krum_f: 5
-  krum_m: 14
+  krum_m: 33

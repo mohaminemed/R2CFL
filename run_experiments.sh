@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Defenses and datasets
-defenses=("rep_nnm" "nnm_krum") #  "ssmtd" == "autobfl" "ssmtd_hmm" "flame" "deepsight" "nnm" "autodfl"
+defenses=("r2_nnm" "nnm_krum") # "ssmtd_hmm" "flame" "deepsight" "nnm" "autodfl"
 datasets=("gtsrb") #   "gtsrb" "femnist"  "cifar" "fashionmnist"
 attacks=("a3fl") # "omp" "neurotoxin"
 

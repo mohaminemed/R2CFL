@@ -8,7 +8,7 @@ from .serial_runner import FederatedExperiment
 from ..attacks.neurotoxin_client import NeurotoxinClient
 from ..attacks.triggers.a3fl import A3FLTrigger
 from ..attacks.triggers.patch_trigger import PatchTrigger
-from ..defenses.rep_nnm import REPNNMKrumServer # Import the reputation-based server for dynamic aggregation
+from ..defenses.r2_nnm import REPNNMKrumServer # Import the reputation-based server for dynamic aggregation
 
 # This function must be at the top level of the module so it can be "pickled"
 def run_client_task(client, global_params, epochs, round_idx, prev_global_grad):

@@ -21,7 +21,7 @@ from ..models.cifar import CifarNetGN
 from ..models.mnist import MNISTNet 
 from ..models.mnist import EMNIST_CNN 
 from ..models.mnist import Fashion_CNN
-from ..models.unet import UNet, FEMNISTAutoencoder
+
 
 
 # Core FL Components
@@ -45,7 +45,7 @@ from ..defenses.flame import FlameServer
 from ..defenses.deepsight import DeepSightServer
 
 from ..defenses.nnm import NNMKrumServer
-from ..defenses.rep_nnm import REPNNMKrumServer
+from ..defenses.r2_nnm import REPNNMKrumServer
 from ..defenses.autodfl import AutoDFLFilteringServer
 from ..defenses.autobfl import AutoBFLFilteringServer
 from ..defenses.ssmtd_hmm import SSMTDHMMFilteringServer
@@ -122,7 +122,7 @@ def get_server_instance(config: Dict, model, test_loader, device):
         return DeepSightServer(model, test_loader, device, defense_cfg, **logging_kwargs)
     elif defense_name == 'nnm_krum':
         return NNMKrumServer(model=model, testloader=test_loader, device=device, config=config, defense_config=defense_cfg, **logging_kwargs)  
-    elif defense_name == 'rep_nnm':      
+    elif defense_name == 'r2_nnm':      
         return REPNNMKrumServer(model=model, testloader=test_loader, device=device, config=config, defense_config=defense_cfg, **logging_kwargs)
     elif defense_name == 'autodfl':
         return AutoDFLFilteringServer(model=model, testloader=test_loader, device=device, config=config, defense_config=defense_cfg, **logging_kwargs)

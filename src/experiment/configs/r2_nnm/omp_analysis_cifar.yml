@@ -1,4 +1,4 @@
-experiment_name: 'omp_rep_nnm_cifar_noniid'
+experiment_name: 'omp_r2_nnm_cifar_noniid'
 seed: 42
 device: "cuda"
 output_dir: "results"
@@ -35,7 +35,7 @@ attack_params:
 
 defense_params:
   enabled: true # Enable the analysis server
-  name: 'rep_nnm'
+  name: 'r2_nnm'
   # --- NNM specific parameters ---
   bucket_size: 2
   base_defense: 'krum' # Use Krum as the base defense

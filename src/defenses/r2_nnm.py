@@ -149,7 +149,7 @@ class REPNNMKrumServer(DefenseMetrics, FedAvgAggregator):
         dist_matrix = torch.cdist(flat_updates, flat_updates, p=2)          # (n, n)
 
         # ── REP-NNM ────────────────────────────────────────────────────
-        print(f"Round {self.round}: Applying REP-NNM (k={self.nnm_k})…")
+        print(f"Round {self.round}: Applying R2-NNM (k={self.nnm_k})…")
         mixed_updates, weight_map = self._rep_nnm(flat_updates, dist_matrix, client_ids)
 
         # ── Krum scoring on mixed updates ──────────────────────────────
