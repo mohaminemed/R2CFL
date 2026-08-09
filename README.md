@@ -166,15 +166,15 @@ The repository provides scripts and configuration files to reproduce all experim
 
 The experiments include:
 
-* Clean training performance.
-* Byzantine robustness evaluation.
-* Backdoor attack evaluation.
+* Clean training performance (ACC/LOSS) analysis.
+* Byzantine/Backdoor robustness (ACC/LOSS/ASR) analysis.
+* Defense detection performance (TPR/FPR) analysis.
 * Reputation convergence analysis.
-* Defense detection performance (TPR/FPR analysis).
 
 
 ---
 
-## License
+## Paper
 
-This project is released under the MIT License.
+This work has been accepted for presentation at the **HotDiSec Workshop**, co-located with **ESORICS 2026**, to be held on **14--18 September 2026 in Rome, Italy**.
+
