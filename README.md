@@ -22,17 +22,18 @@ This repository contains the complete implementation of **R2-CFL** together with
 
 ### Defense Mechanisms
 
-* **NNM** (Nearest Neighbor Mixing)
-* **M-Krum**
-* **FLAME**
-* **DeepSight**
+
+* **M-Krum** (Blanchard et al., NeurIPS'17)
+* **FLAME** (Nguyen et al., USENIX Security'22)
+* **DeepSight** (Rieger et al., NDSS'22)
+* **NNM** (Allouah et al., AISTATS'23)
 * **R2-NNM** (proposed)
 
 ### Reputation Frameworks
 
-* **AutoDFL (Dif et al., NOMS'25)**
-* **SSMTD (Peiming et al., Discover Computing'26)**
-* **R2CFL Reputation Model** (proposed)
+* **AutoDFL** (Dif et al., NOMS'25)
+* **SSMTD** (Peiming et al., Discover Computing'26)**
+* **R2CFL** (proposed)
 
 ---
 
@@ -40,9 +41,9 @@ This repository contains the complete implementation of **R2-CFL** together with
 
 The framework supports the reproduction of experiments under three advanced adaptive attacks:
 
-* **OMP (Shejwalkar et al., NDSS'21)**
-* **A3FL (Zhang et al., NeurIPS'23)**
-* **Neurotoxin (Zhang et al., ICML'22)**
+* **OMP** (Shejwalkar et al., NDSS'21)
+* **A3FL** (Zhang et al., NeurIPS'23)
+* **Neurotoxin** (Zhang et al., ICML'22)
 
 **Note:** These attacks are implemented following their original specifications and can be combined with the available defense mechanisms and reputation models. The backdoor attack implementations used in this work are based on our [backdoor framework](https://github.com/Ayoub-46/sok_eswa).
 
