@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Crowdsourced Federated Learning (CrowdFL)** extends traditional Federated Learning (FL) by enabling open and heterogeneous participation through a crowdsourcing paradigm. In such environments, reputation-based incentive mechanisms are commonly used to guide worker selection and improve trustworthiness.
+**Crowdsourced Federated Learning (CrowdFL)** extends traditional FL by enabling open and heterogeneous participation through a crowdsourcing paradigm. In such environments, reputation-based incentive mechanisms are commonly used to guide worker selection and improve trustworthiness.
 
 While existing reputation-driven CrowdFL frameworks improve participant reliability, they largely overlook the robustness of reputation systems against stealthy adversaries capable of evading standard detection mechanisms. As a result, malicious participants may gradually accumulate reputation and gain increasing influence over future training tasks.
 
