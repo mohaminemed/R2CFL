@@ -44,7 +44,7 @@ The framework supports the reproduction of experiments under three advanced adap
 * **A3FL (Zhang et al., NeurIPS'23)**
 * **Neurotoxin (Zhang et al., ICML'22)**
 
-**Note:** These attacks are implemented following their original specifications and can be combined with the available defense mechanisms and reputation models. The backdoor attack implementations used in this work are based on our backdoor framework, available at [GitHub repository](https://github.com/Ayoub-46/sok_eswa?utm_source=chatgpt.com).
+**Note:** These attacks are implemented following their original specifications and can be combined with the available defense mechanisms and reputation models. The backdoor attack implementations used in this work are based on our [backdoor framework](https://github.com/Ayoub-46/sok_eswa).
 
 
 
