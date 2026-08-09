@@ -32,7 +32,7 @@ This repository contains the complete implementation of **R2-CFL** together with
 ### Reputation Frameworks
 
 * **AutoDFL** (Dif et al., NOMS'25)
-* **SSMTD** (Peiming et al., Discover Computing'26)**
+* **SSMTD** (Peiming et al., Discover Computing'26)
 * **R2CFL** (proposed)
 
 ---
