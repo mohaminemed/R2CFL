@@ -112,7 +112,6 @@ python main.py --config ./src/experiment/configs/r2_nnm/a3fl_analysis_gtsrb.yml
 ```text
 r2_nnm      # Proposed R2CFL defense
 nnm
-nnm_krum
 flame
 deepsight
 autodfl
