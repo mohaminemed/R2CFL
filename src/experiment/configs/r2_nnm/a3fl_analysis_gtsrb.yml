@@ -15,8 +15,8 @@ data_params:
 
 
 fl_params:
-  num_clients: 50
-  clients_per_round: 50 
+  num_clients: 20
+  clients_per_round: 20 
   num_rounds: 100
 
 training_params:
@@ -30,7 +30,7 @@ training_params:
 attack_params:
   enabled: true
   name: "a3fl"
-  malicious_client_ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] 
+  malicious_client_ids: [0, 1, 2, 3, 4, 5] 
   
   poison_fraction: 0.25 
   target_label: 7 
@@ -59,4 +59,4 @@ defense_params:
   base_defense: 'krum' 
   nnm_k: 10
   krum_f: 5
-  krum_m: 33
+  krum_m: 13

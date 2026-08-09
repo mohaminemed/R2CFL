@@ -49,5 +49,5 @@ defense_params:
   # --- NNM specific parameters ---
   base_defense: 'krum' # Use Krum as the base defense 
   krum_f: 5
-  krum_m: 14
+  krum_m: 13
   nnm_k: 10
