@@ -205,7 +205,7 @@ class REPNNMKrumServer(DefenseMetrics, FedAvgAggregator):
     def _update_reputation(self, client_ids: List[int], scores: torch.Tensor):
         eps = 1e-12
         tau = 2.0
-        alpha = 0.2
+        alpha = 0.25
         beta = 0.95
 
         s_vals = scores                            # already a tensor

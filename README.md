@@ -178,3 +178,19 @@ The experiments include:
 
 This work has been accepted for presentation at the **HotDiSec Workshop**, co-located with **ESORICS 2026**, to be held on **14--18 September 2026 in Rome, Italy**.
 
+If you find the work useful in your research, please consider citing the paper:
+
+
+```bibtex
+@misc{bouchiha2026robustreputationdrivencrowdsourcedfederated,
+      title={Robust Reputation-Driven Crowdsourced Federated Learning}, 
+      author={Mouhamed Amine Bouchiha and Gregory Blanc},
+      year={2026},
+      eprint={2608.08574},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2608.08574}, 
+}
+```
+
+
